@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پروژه سایت آنلاین شاپ</title>
+  <link rel="stylesheet" href="Styles/style.css">
+  <link rel="shortcut icon" href="Images/Logo_3-png.png" type="image/png">
+  <script src="Js/index.js"></script>
+</head>
+
+<body>
+
+  <main class="main">
+
+    <header id="site-header">
+      <div class="nav_menu">
+        <div class="logo">
+          <img src="../Images/Logo_3-png.png" alt="">
+          <nav>
+            <ul>
+              <li>
+                <a href="#">صفحه اصلی</a>
+              </li>
+              <li class="image-li">
+                <a href="#">جدیدترین انیمیشن‌ها</a>
+                <img src="../Images/down-arrow-svgrepo-com.svg" alt="">
+              </li>
+              <li class="image-li">
+                <a href="#">اخبار</a>
+                <img src="../Images/down-arrow-svgrepo-com.svg" alt="">
+              </li>
+              <li>
+                <a href="#">درباره ما</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="search-box">
+            <input type="text" placeholder="جستجوی انیمیشن، بازی، شخصیت کارتونی..." />
+            <img src="../Images/search-alt-1-svgrepo-com.svg" alt="search" class="search-icon">
+          </div>
+        </div>
+        <span class="btn-login">
+          <a href="#">ورود / عضویت</a>
+        </span>
+        <!-- این دکمه رو به کدهای HTML هدر، ترجیحاً سمت چپ اضافه کن -->
+        <div class="hamburger" id="hamburger-btn">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+      </div>
+
+    </header>
+
+    <section class="hero-section">
+      <!-- هاله‌های رنگی پس‌زمینه برای زیبایی -->
+      <div class="glow-bg glow-1"></div>
+      <div class="glow-bg glow-2"></div>
+
+      <div class="hero-container">
+        <!-- بخش متن (سمت راست) -->
+        <div class="hero-text-box">
+          <span class="badge">🔥 داغ‌ترین انیمیشن هفته</span>
+          <h1 class="hero-title">
+            دنیای جادویی <span class="highlight-text">انیمیشن‌ها</span> و <span class="highlight-text">بازی‌ها</span>
+            اینجاست!
+          </h1>
+          <p class="hero-desc">
+            جدیدترین کارتون‌ها رو با دوبله فارسی تماشا کن و بهترین بازی‌ها رو با بالاترین سرعت دانلود کن. آماده‌ای
+            برای یه ماجراجویی بزرگ؟
+          </p>
+
+          <div class="hero-buttons">
+            <button class="btn-game btn-download">🎬 دانلود و تماشا</button>
+            <button class="btn-game btn-trailer">▶ تماشای تریلر</button>
+          </div>
+        </div>
+
+        <!-- بخش تصویر (سمت چپ) -->
+        <div class="hero-visual-box">
+          <div class="image-wrapper">
+            <!-- آدرس عکس خودتان را در src قرار دهید -->
+            <img src="../Images/Slider 1.png" alt="انیمیشن جدید" class="hero-image">
+
+            <!-- تگ‌های شناور روی عکس -->
+            <div class="floating-tag tag-quality">کیفیت 4K</div>
+            <div class="floating-tag tag-voice">🎤 دوبله اختصاصی</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- شروع بخش شخصیت‌های محبوب -->
+    <section class="popular-characters-section">
+      <div class="characters-header">
+        <h2><span>✨</span> شخصیت‌های محبوبت اینجان!</h2>
+      </div>
+
+      <div class="characters-container">
+
+        <!-- شخصیت ۱ -->
+        <a href="#" class="character-card">
+          <div class="circle-wrapper">
+            <!-- به جای آدرس زیر، عکس شخصیت خودت رو بذار -->
+            <img src="https://lumiere-a.akamaihd.net/v1/images/ct_frozen_elsa_18466_22a50822.jpeg" alt="باب اسفنجی">
+          </div>
+          <span class="character-name">باب اسفنجی</span>
+        </a>
+
+        <!-- شخصیت ۲ -->
+        <a href="#" class="character-card">
+          <div class="circle-wrapper">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/ct_frozen_elsa_18466_22a50822.jpeg" alt="السا">
+          </div>
+          <span class="character-name">السا</span>
+        </a>
+
+        <!-- شخصیت ۳ -->
+        <a href="#" class="character-card">
+          <div class="circle-wrapper">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/ct_frozen_elsa_18466_22a50822.jpeg" alt="مینیون‌ها">
+          </div>
+          <span class="character-name">مینیون‌ها</span>
+        </a>
+
+        <!-- شخصیت ۴ -->
+        <a href="#" class="character-card">
+          <div class="circle-wrapper">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/ct_frozen_elsa_18466_22a50822.jpeg" alt="مرد عنکبوتی">
+          </div>
+          <span class="character-name">مرد عنکبوتی</span>
+        </a>
+
+        <!-- شخصیت ۵ -->
+        <a href="#" class="character-card">
+          <div class="circle-wrapper">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/ct_frozen_elsa_18466_22a50822.jpeg" alt="شرک">
+          </div>
+          <span class="character-name">شرک</span>
+        </a>
+
+        <!-- شخصیت ۶ -->
+        <a href="#" class="character-card">
+          <div class="circle-wrapper">
+            <img src="https://lumiere-a.akamaihd.net/v1/images/ct_frozen_elsa_18466_22a50822.jpeg" alt="چیس">
+          </div>
+          <span class="character-name">سگ‌های نگهبان</span>
+        </a>
+
+      </div>
+    </section>
+    <!-- پایان بخش شخصیت‌های محبوب -->
+
+
+
+
+
+
+    <section class="anime-section">
+
+      <div class="section-header">
+        <h2>انیمیشن ها</h2>
+        <a href="#" class="view-all">مشاهده همه</a>
+      </div>
+
+
+      <div class="movies-grid">
+
+        <!-- کارت 1: درون و بیرون 2 -->
+        <div class="family-card">
+          <div class="family-poster">
+            <img src="../Images/Ani 1.png" alt="درون و بیرون 2" class="poster-image">
+            <div class="parent-info-tags">
+              <span class="tag-age safe-age">+۷ سال</span>
+              <span class="tag-dubbed">🎤 دوبله اختصاصی</span>
+            </div>
+            <div class="kid-action-overlay">
+              <button class="big-play-btn">
+                <svg viewBox="0 0 24 24" class="play-icon">
+                  <path fill="currentColor" d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="family-details">
+            <h3 class="cartoon-title">درون و بیرون ۲</h3>
+            <p class="cartoon-genre">کمدی، خانوادگی، روانشناسی</p>
+            <div class="action-footer">
+              <span class="imdb-rate">⭐ ۷.۹</span>
+              <button class="parent-download-btn">📥 دانلود</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- کارت 2: موانا 2 -->
+        <div class="family-card">
+          <div class="family-poster">
+            <img src="../Images/Cart 2.png" alt="موانا 2" class="poster-image">
+            <div class="parent-info-tags">
+              <span class="tag-age safe-age">همه سنین</span>
+              <span class="tag-dubbed">🎤 دوبله فارسی</span>
+            </div>
+            <div class="kid-action-overlay">
+              <button class="big-play-btn">
+                <svg viewBox="0 0 24 24" class="play-icon">
+                  <path fill="currentColor" d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="family-details">
+            <h3 class="cartoon-title">موانا ۲ (Moana)</h3>
+            <p class="cartoon-genre">موزیکال، ماجراجویی</p>
+            <div class="action-footer">
+              <span class="imdb-rate">⭐ ۷.۵</span>
+              <button class="parent-download-btn">📥 دانلود</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- کارت 3: الیو -->
+        <div class="family-card">
+          <div class="family-poster">
+            <img src="../Images/Cart 1.png" alt="الیو" class="poster-image">
+            <div class="parent-info-tags">
+              <span class="tag-age safe-age">+۷ سال</span>
+              <span class="tag-dubbed">🎤 دوبله فارسی</span>
+            </div>
+            <div class="kid-action-overlay">
+              <button class="big-play-btn">
+                <svg viewBox="0 0 24 24" class="play-icon">
+                  <path fill="currentColor" d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="family-details">
+            <h3 class="cartoon-title">الیو (Elio)</h3>
+            <p class="cartoon-genre">علمی‌تخیلی، کمدی</p>
+            <div class="action-footer">
+              <span class="imdb-rate">⭐ منتظر اکران</span>
+              <button class="parent-download-btn">🎬 تریلر</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- کارت 4: من نفرت انگیز 4 -->
+        <div class="family-card">
+          <div class="family-poster">
+            <img src="../Images/Ani 1.png" alt="من نفرت انگیز 4" class="poster-image">
+            <div class="parent-info-tags">
+              <span class="tag-age safe-age">+۳ سال</span>
+              <span class="tag-dubbed">🎤 دوبله طنز</span>
+            </div>
+            <div class="kid-action-overlay">
+              <button class="big-play-btn">
+                <svg viewBox="0 0 24 24" class="play-icon">
+                  <path fill="currentColor" d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="family-details">
+            <h3 class="cartoon-title">من نفرت‌انگیز ۴</h3>
+            <p class="cartoon-genre">کمدی، اکشن، مینیون‌ها</p>
+            <div class="action-footer">
+              <span class="imdb-rate">⭐ ۶.۳</span>
+              <button class="parent-download-btn">📥 دانلود</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- کارت 5: پاندای کونگ فو کار 4 -->
+        <div class="family-card">
+          <div class="family-poster">
+            <img src="../Images/Cart 1.png" alt="پاندای کونگ فو کار 4" class="poster-image">
+            <div class="parent-info-tags">
+              <span class="tag-age safe-age">+۷ سال</span>
+              <span class="tag-dubbed">🎤 دوبله سندیکا</span>
+            </div>
+            <div class="kid-action-overlay">
+              <button class="big-play-btn">
+                <svg viewBox="0 0 24 24" class="play-icon">
+                  <path fill="currentColor" d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="family-details">
+            <h3 class="cartoon-title">پاندای کونگ‌فو کار ۴</h3>
+            <p class="cartoon-genre">اکشن، هنرهای رزمی</p>
+            <div class="action-footer">
+              <span class="imdb-rate">⭐ ۶.۳</span>
+              <button class="parent-download-btn">📥 دانلود</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- کارت 6: مرد عنکبوتی (توجه به تگ زرد رنگ برای هشدار سن) -->
+        <div class="family-card">
+          <div class="family-poster">
+            <img src="../Images/Cart 2.png" alt="مرد عنکبوتی" class="poster-image">
+            <div class="parent-info-tags">
+              <span class="tag-age warning-age">+۱۲ سال</span> <!-- استفاده از کلاس warning-age -->
+              <span class="tag-dubbed">🎤 دوبله فارسی</span>
+            </div>
+            <div class="kid-action-overlay">
+              <button class="big-play-btn">
+                <svg viewBox="0 0 24 24" class="play-icon">
+                  <path fill="currentColor" d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="family-details">
+            <h3 class="cartoon-title">مرد عنکبوتی: فراتر از ...</h3>
+            <p class="cartoon-genre">ابرقهرمانی، اکشن</p>
+            <div class="action-footer">
+              <span class="imdb-rate">⭐ ۸.۷</span>
+              <button class="parent-download-btn">📥 دانلود</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- شروع بخش اسلایدر بازی ها -->
+    <section class="games-section">
+      <!-- هدر بخش بازی ها -->
+      <div class="games-header">
+        <div class="games-title-box">
+          <span class="game-icon">🎮</span>
+          <h2>دنیای هیجان‌انگیز <span>بازی‌ها</span></h2>
+        </div>
+        <a href="#" class="view-all-games">همه بازی‌ها <span>🡐</span></a>
+      </div>
+
+      <!-- کانتینر اصلی اسلایدر -->
+      <div class="games-slider-container">
+        <!-- دکمه اسکرول راست -->
+        <button class="g-slide-btn g-prev" id="g-prev-btn">🡒</button>
+
+        <!-- مسیر حرکت کارت ها -->
+        <div class="games-track" id="games-track">
+
+          <!-- کارت بازی شماره 1 -->
+          <div class="game-card">
+            <div class="game-image-wrapper">
+              <!-- عکس بازی (مربعی) -->
+              <img src="../Images/Cart Game 1.png" alt="بازی سگ های نگهبان">
+              <!-- تگ پلتفرم -->
+              <span class="platform-tag android">📱 اندروید</span>
+              <!-- لایه هاور و دکمه دانلود -->
+              <div class="game-hover-overlay">
+                <button class="download-game-btn">⬇️ دانلود بازی</button>
+              </div>
+            </div>
+            <div class="game-info">
+              <h3>سگ‌های نگهبان: نجات</h3>
+              <p>ماجراجویی / مسابقه‌ای</p>
+            </div>
+          </div>
+
+          <!-- کارت بازی شماره 2 -->
+          <div class="game-card">
+            <div class="game-image-wrapper">
+              <img src="../Images/Cart Game 2.png" alt="بازی ماینکرفت">
+              <span class="platform-tag pc">💻 کامپیوتر</span>
+              <div class="game-hover-overlay">
+                <button class="download-game-btn">⬇️ دانلود بازی</button>
+              </div>
+            </div>
+            <div class="game-info">
+              <h3>ماینکرافت (نسخه کودک)</h3>
+              <p>فکری / ساخت و ساز</p>
+            </div>
+          </div>
+
+          <!-- کارت بازی شماره 3 -->
+          <div class="game-card">
+            <div class="game-image-wrapper">
+              <img src="../Images/Cart Game 3.png" alt="بازی باب اسفنجی">
+              <span class="platform-tag android">📱 اندروید</span>
+              <div class="game-hover-overlay">
+                <button class="download-game-btn">⬇️ دانلود بازی</button>
+              </div>
+            </div>
+            <div class="game-info">
+              <h3>آشپزی با باب اسفنجی</h3>
+              <p>دخترانه / سرگرمی</p>
+            </div>
+          </div>
+
+          <!-- کارت بازی شماره 4 -->
+          <div class="game-card">
+            <div class="game-image-wrapper">
+              <img src="../Images/Cart Game 4.png" alt="ماریو کارت">
+              <span class="platform-tag console">🎮 کنسول</span>
+              <div class="game-hover-overlay">
+                <button class="download-game-btn">⬇️ دانلود بازی</button>
+              </div>
+            </div>
+            <div class="game-info">
+              <h3>ماریو کارت 8</h3>
+              <p>مسابقه‌ای / هیجانی</p>
+            </div>
+          </div>
+
+          <!-- کارت بازی شماره 5 -->
+          <div class="game-card">
+            <div class="game-image-wrapper">
+              <img src="../Images/Cart Game 5.png" alt="بازی مینیون ها">
+              <span class="platform-tag android">📱 اندروید</span>
+              <div class="game-hover-overlay">
+                <button class="download-game-btn">⬇️ دانلود بازی</button>
+              </div>
+            </div>
+            <div class="game-info">
+              <h3>مینیون‌ها: دویدن بی‌پایان</h3>
+              <p>رکوردی / اکشن</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- دکمه اسکرول چپ -->
+        <button class="g-slide-btn g-next" id="g-next-btn">🡐</button>
+      </div>
+    </section>
+    <!-- پایان بخش اسلایدر بازی ها -->
+
+    <!-- شروع فوتر جادویی جدید -->
+    <footer class="magic-footer-new">
+
+      <!-- ذرات نوری معلق پس‌زمینه -->
+      <div class="magic-particles">
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
+        <span class="particle p5"></span>
+      </div>
+
+      <div class="container footer-container">
+        <div class="footer-grid">
+
+          <!-- باکس 1: خبرنامه (سمت راست در RTL) -->
+          <div class="glass-box join-box">
+            <h3 class="box-title">به ما ملحق شو! 🚀</h3>
+            <p class="box-desc">اولین نفری باش که از کارتون‌های جدید باخبر میشه.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="ایمیل خودتو بنویس..." required>
+              <button type="submit">ثبت نام ✨</button>
+            </form>
+          </div>
+
+          <!-- باکس 2: لینک‌های سریع (وسط) -->
+          <div class="glass-box links-box">
+            <h3 class="box-title">دسترسی سریع 🔗</h3>
+            <ul class="footer-links">
+              <li><a href="#">سیاست حفظ حریم خصوصی</a></li>
+              <li><a href="#">قوانین و مقررات</a></li>
+              <li><a href="#">پشتیبانی و تماس با ما</a></li>
+              <li><a href="#">درباره تیم ما</a></li>
+            </ul>
+          </div>
+
+          <!-- باکس 3: درباره ما (سمت چپ) -->
+          <div class="glass-box about-box">
+            <div class="footer-brand">
+              <!-- اگر لوگوی خاصی داری آدرسش رو اینجا بذار -->
+              <img src="../images/Logo_3-png.png" alt="لوگو" class="footer-logo-img"
+                onerror="this.style.display='none'">
+              <h3>کودونیمو</h3>
+            </div>
+            <p class="box-desc">سرزمین هیجان‌انگیز کارتون‌ها و بازی‌ها! اینجا هیچ‌وقت حوصله‌ت سر نمیره. همراه ما باش تا
+              جدیدترین‌ها رو زودتر از همه ببینی.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- کپی رایت پایین فوتر -->
+      <div class="footer-copyright">
+        <p>تمامی حقوق برای سایت <span class="highlight-text">کودونیمو</span> محفوظ است. © 2026</p>
+      </div>
+    </footer>
+    <!-- پایان فوتر -->
+
+
+
+
+
+
+  </main>
+
+</body>
+
+</html>

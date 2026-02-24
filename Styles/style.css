@@ -1,0 +1,1382 @@
+@font-face {
+    font-family: "Pinar-VF";
+    src: url("../Fonts/Pinar-VF.woff2")
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Pinar-VF";
+}
+
+.main {
+    min-height: 280vh;
+    background: linear-gradient(135deg, #E0F2FE, #BAE6FD, #7DD3FC);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 140px;
+    margin-right: 10px;
+}
+
+#site-header.scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    /* سفید شیشه‌ای */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 10px 0;
+}
+
+.nav_menu {
+    background: rgba(255, 255, 255, 0.519);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.653);
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_menu ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav_menu ul li {
+    list-style-type: none;
+}
+
+.nav_menu li a {
+    text-decoration: none;
+    color: #0F172A;
+    margin-right: 35px;
+    font-size: 0.92rem;
+}
+
+/* =========================================
+   کدهای ریسپانسیو هدر (بدون تغییر در دسکتاپ)
+========================================= */
+
+/* دکمه همبرگر در حالت عادی (دسکتاپ) مخفی است */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #2b1055;
+    /* رنگ خطوط دکمه */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1068px) {
+     .nav_menu li a  {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 1016px) {
+     .nav_menu li a  {
+        font-size: 0.60rem;
+    }
+}
+
+    /* ۱. نمایش دکمه همبرگر */
+/* وقتی عرض صفحه از 992 پیکسل کمتر شد (تبلت و موبایل) */
+@media (max-width: 992px) {
+
+    /* ۱. نمایش دکمه همبرگر */
+    .hamburger {
+        display: flex;
+    }
+
+    /* ۲. مخفی کردن سرچ باکس برای خلوت شدن هدر در موبایل */
+    .search-box {
+        display: none !important;
+    }
+
+    /* ۳. تبدیل منوی افقی به منوی کشویی موبایل */
+    /* نکته: فرض بر این است که لینک‌های شما داخل تگ nav هستند */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* پیش‌فرض بیرون از صفحه (پنهان) */
+        width: 280px;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        padding-top: 80px;
+        /* فاصله از بالا */
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* کلاسی که با جاوااسکریپت اضافه میشه تا منو باز بشه */
+    nav.active {
+        right: 0;
+    }
+
+    /* مرتب کردن لیست منوها (ul و li) در حالت عمودی */
+    nav ul {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-right: 30px !important;
+        gap: 25px !important;
+    }
+
+    /* انیمیشن تبدیل همبرگر به ضربدر (X) وقتی منو باز است */
+    .hamburger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active .line2 {
+        opacity: 0;
+    }
+
+    .hamburger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* برای موبایل‌های خیلی کوچک */
+@media (max-width: 576px) {
+
+    /* اگر دکمه ورود جا نشد، می‌تونی اینجا استایلش رو تغییر بدی یا مخفیش کنی */
+    .btn-login {
+        transform: scale(0.9);
+    }
+}
+
+.image-li {
+    display: flex;
+    align-items: center;
+}
+
+.image-li img {
+    width: 10px;
+}
+
+.btn-login a {
+    margin-left: 45px;
+    text-decoration: none;
+    background-color: #099ee3;
+    color: #eff6f9;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-weight: bold;
+    font-size: 0.90rem;
+}
+
+.search-box {
+    position: relative;
+    width: 320px;
+    transition: 0.4s ease;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 45px 14px 20px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    outline: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    color: #0F172A;
+    transition: 0.4s ease;
+    margin-right: 35px;
+}
+
+.search-box input::placeholder {
+    color: #334155;
+    font-family: "Pinar-VF";
+}
+
+.search-box input:focus {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+    transform: scale(1.05);
+}
+
+.search-icon {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 36px;
+    top: 47%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* --- تنظیمات کلی بخش هیرو --- */
+.hero-section {
+    position: relative;
+    background-color: #e0f2fe;
+    /* آبی بسیار روشن و ملایم */
+    padding: 50px 5%;
+    overflow: hidden;
+    /* جلوگیری از بیرون زدن هاله‌های رنگی */
+    border-radius: 40px;
+    /* گرد کردن کل باکس هیرو */
+    margin: 20px;
+    direction: rtl;
+}
+
+/* هاله‌های رنگی رویایی در پس زمینه */
+.glow-bg {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+}
+
+.glow-1 {
+    width: 300px;
+    height: 300px;
+    background: #bae6fd;
+    top: -50px;
+    right: -50px;
+}
+
+.glow-2 {
+    width: 400px;
+    height: 400px;
+    background: #fdf4ff;
+    /* هاله صورتی/بنفش بسیار محو */
+    bottom: -100px;
+    left: -100px;
+}
+
+/* کانتینر اصلی */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    /* برای قرار گرفتن روی هاله‌ها */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+/* --- استایل‌های بخش متن --- */
+.hero-text-box {
+    flex: 1;
+}
+
+.badge {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+}
+
+.hero-title {
+    font-size: 42px;
+    color: #0f172a;
+    line-height: 2.4;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.highlight-text {
+    color: #0284c7;
+    position: relative;
+    display: inline-block;
+}
+
+/* یک خط کشیده شده فانتزی زیر کلمات کلیدی */
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #fde047;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.hero-desc {
+    font-size: 18px;
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* --- استایل دکمه‌های بازی‌گونه (Gamified) --- */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-game {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.btn-download {
+    background: linear-gradient(to bottom, #38bdf8, #0284c7);
+    color: white;
+    box-shadow: 0 6px 0 #0369a1, 0 15px 20px rgba(2, 132, 199, 0.4);
+    /* سایه سه‌بعدی */
+}
+
+.btn-download:active {
+    transform: translateY(6px);
+    /* فشرده شدن دکمه در زمان کلیک */
+    box-shadow: 0 0 0 #0369a1, 0 5px 10px rgba(2, 132, 199, 0.4);
+}
+
+.btn-trailer {
+    background: white;
+    color: #0284c7;
+    border: 2px solid #e0f2fe;
+    box-shadow: 0 6px 0 #e0f2fe;
+}
+
+.btn-trailer:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 #e0f2fe;
+}
+
+/* --- استایل بخش عکس (سمت چپ) --- */
+.hero-visual-box {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+    /* انیمیشن شناور بودن */
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 30px;
+    border: 8px solid white;
+    /* قاب سفید ضخیم و جذاب */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* تگ‌های شناور روی عکس */
+.floating-tag {
+    position: absolute;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    color: #0f172a;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+.tag-quality {
+    top: 20px;
+    right: -20px;
+    border-right: 4px solid #f59e0b;
+    /* نوار رنگی کنار تگ */
+}
+
+.tag-voice {
+    bottom: 30px;
+    left: -20px;
+    border-left: 4px solid #10b981;
+}
+
+/* انیمیشن شناور شدن عکس */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    /* 20 پیکسل بالا می‌رود */
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .highlight-text::after {
+        display: none;
+        /* در موبایل خط زیر کلمات را برمی‌داریم که شلوغ نشود */
+    }
+
+    .tag-quality,
+    .tag-voice {
+        display: none;
+        /* مخفی کردن تگ‌های شناور در موبایل برای سادگی */
+    }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    margin-right: 30px;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.view-all {
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-top: 15px;
+    color: #0F172A;
+    text-decoration: none;
+}
+
+/* ساختار اصلی کارت (گرد و ایمن) */
+.movies-grid {
+    display: grid;
+    /* این خط سایت شما را کاملا ریسپانسیو می‌کند. 
+       می‌گوید: عرض هر کارت حداقل 200 پیکسل باشد. اگر جا بود کارت‌ها را کنار هم بچین. */
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 20px;
+    /* فاصله بین کارت‌ها (بالا، پایین، چپ، راست) */
+    max-width: 1290px;
+    /* حداکثر عرض کل محوطه کارت‌ها در مانیتورهای خیلی بزرگ */
+    margin: 0 auto;
+    /* وسط‌چین کردن کل شبکه در صفحه */
+}
+
+/* =========================================
+   طراحی کارت‌ها (ابعاد کوچکتر شده)
+========================================= */
+.family-card {
+    background: #ffffff;
+    border-radius: 16px;
+    /* کمی کمتر از قبل تا با سایز کوچک تناسب داشته باشد */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* سایه ملایم‌تر */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    /* عرض کارت حالا توسط گرید کنترل می‌شود */
+}
+
+.family-card:hover {
+    transform: translateY(-6px);
+    /* پرش کمی ملایم‌تر شد */
+    box-shadow: 0 12px 25px rgba(2, 132, 199, 0.12);
+}
+
+/* --- بخش پوستر و تگ‌های والدین --- */
+.family-poster {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    /* حفظ تناسب استاندارد پوستر فیلم */
+}
+
+.poster-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* تگ‌های اطلاعات والدین (سایز کوچکتر) */
+.parent-info-tags {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    left: 8px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.tag-age,
+.tag-dubbed {
+    padding: 4px 8px;
+    /* پدینگ کمتر */
+    border-radius: 10px;
+    font-size: 11px;
+    /* فونت کوچکتر */
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.safe-age {
+    background-color: #10b981;
+}
+
+.warning-age {
+    background-color: #f59e0b;
+}
+
+.tag-dubbed {
+    background-color: #3b82f6;
+}
+
+/* --- هاله و دکمه پخش کودکانه (سایز کوچکتر) --- */
+.kid-action-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    /* هاله روشن‌تر */
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.family-card:hover .kid-action-overlay {
+    opacity: 1;
+}
+
+.big-play-btn {
+    width: 55px;
+    /* کوچکتر شد (قبلا 70 بود) */
+    height: 55px;
+    /* کوچکتر شد */
+    border-radius: 50%;
+    background: #f43f5e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(244, 63, 94, 0.4);
+    transform: scale(0.5);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.family-card:hover .big-play-btn {
+    transform: scale(1);
+}
+
+.play-icon {
+    width: 28px;
+    /* آیکون کوچکتر */
+    height: 28px;
+    margin-right: 3px;
+    /* تنظیم تراز آیکون */
+}
+
+/* --- بخش اطلاعات پایین کارت (سایز متون و فاصله‌ها کوچکتر) --- */
+.family-details {
+    padding: 12px;
+    /* فضای داخلی کمتر */
+}
+
+.cartoon-title {
+    font-size: 14px;
+    /* فونت عنوان کوچکتر */
+    color: #1e293b;
+    margin: 0 0 4px 0;
+    font-weight: 800;
+    white-space: nowrap;
+    /* جلوگیری از دو خطی شدن عنوان‌های طولانی */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* اضافه کردن ... به آخر عنوان‌های طولانی */
+    font-family: "Pinar-VF";
+}
+
+.cartoon-genre {
+    font-size: 11px;
+    /* فونت ژانر کوچکتر */
+    color: #64748b;
+    margin: 0 0 12px 0;
+    font-family: "Pinar-VF";
+}
+
+.action-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 10px;
+}
+
+.imdb-rate {
+    font-size: 12px;
+    font-weight: bold;
+    color: #475569;
+}
+
+.parent-download-btn {
+    background: #e0f2fe;
+    color: #0284c7;
+    border: none;
+    padding: 5px 12px;
+    /* دکمه دانلود جمع و جورتر */
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: "Pinar-VF";
+}
+
+.parent-download-btn:hover {
+    background: #bae6fd;
+}
+
+/* تنظیمات کلی بخش شخصیت‌ها */
+.popular-characters-section {
+    width: 100%;
+    max-width: 1200px;
+    /* هم‌عرض با بنر هیرو */
+    margin: 40px auto;
+    padding: 0 20px;
+    direction: rtl;
+}
+
+/* عنوان بخش */
+.characters-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.characters-header h2 {
+    font-size: 24px;
+    color: #1a2b4c;
+    /* رنگ سورمه‌ای مشابه متن بنر */
+    font-weight: 800;
+}
+
+.characters-header h2 span {
+    font-size: 28px;
+    margin-left: 5px;
+}
+
+/* ظرف نگهدارنده دایره‌ها */
+.characters-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    /* برای اینکه تو گوشی بره خط بعد */
+}
+
+/* کارت هر شخصیت */
+.character-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    /* این باعث میشه کاربر بدونه روی اینا میشه کلیک کرد */
+    cursor: pointer;
+}
+
+/* دایره دور عکس */
+.circle-wrapper {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    /* یه حاشیه سفید و سایه نرم که تو بک‌گراند آبی سایتت عالی میشه */
+    border: 5px solid #ffffff;
+    box-shadow: 0 10px 20px rgba(15, 146, 216, 0.15);
+    overflow: hidden;
+    position: relative;
+    background-color: #fadb5f;
+    /* رنگ زرد زنده زیر عکس */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* افکت پرشی */
+    z-index: 1;
+}
+
+/* عکس داخل دایره */
+.circle-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* عکس رو بدون دفرمه شدن دایره‌ای میکنه */
+    transition: transform 0.4s ease;
+}
+
+/* تگ اسم شخصیت */
+.character-name {
+    margin-top: -15px;
+    /* میکشتش بالا تا بیفته روی دایره */
+    background-color: #ffffff;
+    color: #0f92d8;
+    /* آبی مشابه دکمه‌های سایتت */
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 18px;
+    border-radius: 20px;
+    /* شکل کپسولی */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    /* میاد روی عکس قرار میگیره */
+    transition: all 0.3s ease;
+}
+
+/* ================================= */
+/* افکت‌های جذاب هنگام رفتن موس (Hover) */
+/* ================================= */
+
+.character-card:hover .circle-wrapper {
+    transform: translateY(-10px);
+    /* دایره میپره بالا */
+    border-color: #fadb5f;
+    /* رنگ حاشیه زرد میشه */
+    box-shadow: 0 15px 25px rgba(250, 219, 95, 0.4);
+    /* سایه زرد درخشان */
+}
+
+.character-card:hover .circle-wrapper img {
+    transform: scale(1.15) rotate(5deg);
+    /* عکس زوم میشه و یه کم میچرخه */
+}
+
+.character-card:hover .character-name {
+    background-color: #fadb5f;
+    /* بک‌گراند اسم زرد میشه */
+    color: #000000;
+    transform: translateY(-5px);
+    /* اسم هم کمی میپره بالا */
+}
+
+/* ================================= */
+/* ریسپانسیو برای موبایل */
+/* ================================= */
+@media (max-width: 768px) {
+    .characters-container {
+        gap: 15px;
+    }
+
+    .circle-wrapper {
+        width: 85px;
+        height: 85px;
+        border-width: 3px;
+    }
+
+    .character-name {
+        font-size: 12px;
+        padding: 4px 12px;
+        margin-top: -10px;
+    }
+}
+
+/* ========================================= */
+/* استایل های اختصاصی بخش بازی ها */
+/* ========================================= */
+.games-section {
+    width: 100%;
+    max-width: 1250px;
+    margin: 60px auto;
+    padding: 0 20px;
+    direction: rtl;
+}
+
+/* هدر بخش بازی ها */
+.games-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.games-title-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.game-icon {
+    font-size: 25px;
+    background: #fadb5f;
+    padding: 0px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(250, 219, 95, 0.4);
+}
+
+.games-title-box h2 {
+    font-size: 15px;
+    color: #1a2b4c;
+    font-weight: 900;
+    margin: 0;
+}
+
+.games-title-box h2 span {
+    color: #0f92d8;
+    /* کلمه "بازی‌ها" به رنگ آبی درمیاد */
+}
+
+.view-all-games {
+    text-decoration: none;
+    color: #8892b0;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.view-all-games:hover {
+    color: #0f92d8;
+}
+
+/* کانتینر اسلایدر */
+.games-slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* مسیر حرکت کارت ها */
+.games-track {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 5px;
+    /* فضا برای دیده شدن سایه کارت ها */
+}
+
+/* مخفی کردن اسکرول بار مرورگر */
+.games-track::-webkit-scrollbar {
+    display: none;
+}
+
+.games-track {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ========================================= */
+/* طراحی کارت های بازی (شبیه آیکون اپلیکیشن) */
+/* ========================================= */
+.game-card {
+    min-width: 220px;
+    /* عرض کارت */
+    background: #ffffff;
+    border-radius: 28px;
+    /* گوشه های خیلی گرد */
+    padding: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    cursor: pointer;
+}
+
+/* هاور شدن کل کارت */
+.game-card:hover {
+    transform: translateY(-12px);
+    border-color: #fadb5f;
+    /* حاشیه زرد میشه */
+    box-shadow: 0 15px 35px rgba(15, 146, 216, 0.15);
+    /* سایه آبی ملایم */
+}
+
+/* باکس عکس بازی */
+.game-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* عکس کاملا مربعی میشه */
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: #f0f4f8;
+}
+
+.game-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-image-wrapper img {
+    transform: scale(1.1);
+    /* زوم شدن عکس موقع هاور */
+}
+
+/* تگ پلتفرم (اندروید، کامپیوتر و...) */
+.platform-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.platform-tag.android {
+    background: #3ddc84;
+}
+
+/* سبز اندروید */
+.platform-tag.pc {
+    background: #0f92d8;
+}
+
+/* آبی */
+.platform-tag.console {
+    background: #ff4757;
+}
+
+/* قرمز */
+
+/* لایه تاریک و دکمه دانلود (فقط در زمان هاور دیده میشه) */
+.game-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 146, 216, 0.9), rgba(15, 146, 216, 0.4));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.game-card:hover .game-hover-overlay {
+    opacity: 1;
+}
+
+.download-game-btn {
+    background: #fadb5f;
+    color: #1a2b4c;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 13px;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    font-family: "Pinar-VF";
+}
+
+.game-card:hover .download-game-btn {
+    transform: translateY(0);
+    /* دکمه میپره بالا */
+}
+
+/* اطلاعات زیر عکس */
+.game-info {
+    text-align: center;
+    margin-top: 15px;
+    padding-bottom: 5px;
+}
+
+.game-info h3 {
+    font-size: 16px;
+    color: #1a2b4c;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+}
+
+.game-info p {
+    font-size: 12px;
+    color: #8892b0;
+    margin: 0;
+}
+
+/* ========================================= */
+/* دکمه های اسکرول (چپ و راست) */
+/* ========================================= */
+.g-slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    color: #0f92d8;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.g-slide-btn:hover {
+    background: #0f92d8;
+    color: #ffffff;
+    border-color: #0f92d8;
+    box-shadow: 0 5px 15px rgba(15, 146, 216, 0.3);
+}
+
+.g-prev {
+    right: -20px;
+}
+
+.g-next {
+    left: -20px;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    .g-slide-btn {
+        display: none;
+    }
+
+    /* مخفی کردن دکمه ها در موبایل */
+    .game-card {
+        min-width: 180px;
+    }
+}
+
+/* =========================================
+   Magic Footer V3 (Clean & Glassmorphism)
+========================================= */
+
+.magic-footer-new {
+    position: relative;
+    /* یک گرادینت بنفش به آبی بسیار خوش‌رنگ و مدرن */
+    background: linear-gradient(135deg, #1e0a3c 0%, #3e588f 100%);
+    color: #fff;
+    padding-top: 80px;
+    /* فاصله استاندارد از بالا - بدون فضای خالی اضافی */
+    margin-top: 50px;
+    /* یک فاصله ملایم از سکشن قبلی */
+    overflow: hidden;
+    direction: rtl;
+    border-top: 4px solid #feca57;
+    /* یک خط زرد رنگ زیبا در بالای فوتر برای جداسازی */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* ساختار شبکه ای برای 3 ستون */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* استایل باکس‌های شیشه‌ای (Glassmorphism) */
+.glass-box {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.glass-box:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.09);
+}
+
+/* تیترها و متن‌های داخل باکس */
+.box-title {
+    font-size: 1.3rem;
+    color: #feca57;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.box-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* استایل برند و لوگو */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-brand h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* استایل لینک‌های دسترسی سریع */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: #feca57;
+    transform: translateX(-5px);
+}
+
+/* فرم خبرنامه */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.newsletter-form input {
+    width: 90%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Pinar-VF";
+}
+
+.newsletter-form input:focus {
+    border-color: #feca57;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.newsletter-form button {
+    background: #feca57;
+    color: #1e0a3c;
+    border: none;
+    padding: 5px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Pinar-VF";
+}
+
+.newsletter-form button:hover {
+    background: #ffb142;
+    transform: scale(1.02);
+}
+
+/* بخش کپی‌رایت پایین */
+.footer-copyright {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    color: #bbb;
+    position: relative;
+    z-index: 10;
+}
+
+/* انیمیشن ذرات معلق (Particles) */
+.magic-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: floatUp 8s infinite ease-in-out;
+}
+
+.p1 {
+    width: 15px;
+    height: 15px;
+    left: 10%;
+    bottom: -20px;
+    animation-duration: 7s;
+}
+
+.p2 {
+    width: 8px;
+    height: 8px;
+    left: 30%;
+    bottom: -20px;
+    animation-duration: 9s;
+    animation-delay: 2s;
+}
+
+.p3 {
+    width: 20px;
+    height: 20px;
+    left: 60%;
+    bottom: -20px;
+    animation-duration: 12s;
+    background: rgba(254, 202, 87, 0.2);
+}
+
+.p4 {
+    width: 12px;
+    height: 12px;
+    left: 85%;
+    bottom: -20px;
+    animation-duration: 8s;
+    animation-delay: 1s;
+}
+
+.p5 {
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    bottom: -20px;
+    animation-duration: 10s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-400px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* ریسپانسیو برای موبایل و تبلت */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-box {
+        grid-column: span 2;
+        /* در تبلت باکس درباره ما تمام عرض میشه */
+    }
+}
+
+@media (max-width: 768px) 
+{
+        .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-box {
+        grid-column: span 1;
+    }
+
+    .magic-footer-new {
+        padding-top: 50px;
+    }
+}
